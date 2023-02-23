@@ -31,18 +31,26 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del bigliett
 
 /* /Pseduo codice */
 
+let userNameEl;
+
 let tripKmEl;
 
 let userAgeEl;
 
 let myBtnEl = document.getElementById("myBtn");
 
+
 //-aggiungi evento sul bottone quando viene cliccato
 myBtnEl.addEventListener("click", function(){
 
+//-chiedi nome e cognome e memorizzali
+    userNameEl = document.getElementById("userName").value;
+    console.log(userNameEl)
+
+
 // -chiedi i kilometri che dovrà percorrere e memorizzali    
     tripKmEl = document.getElementById("tripKm").value;
-    console.log(tripKmEl)
+    console.log(tripKmEl + " Km")
     
 // -calcola il prezzo del biglietto standard (0,21 * km)    
     let prezzoBiglietto = 0.21 * tripKmEl;
@@ -61,24 +69,32 @@ myBtnEl.addEventListener("click", function(){
 
         prezzoFinale = prezzoBiglietto - (20 * prezzoBiglietto / 100);
         console.log("Prezzo Scontato " + prezzoFinale.toFixed(2) + " \u20AC")
-
+        document.getElementById("offerta").innerHTML = "Sconto minorenni !"
 
 // :?ALTRIMENTI SE è over 65
 //   °applica uno sconto del 40%        
     } else if (userAgeEl > 65){
 
         prezzoFinale = prezzoBiglietto - (40 * prezzoBiglietto / 100);
-        console.log("Prerzzo Scontato " + prezzoFinale.toFixed(2) + " \u20AC")
-
+        console.log("Prezzo Scontato " + prezzoFinale.toFixed(2) + " \u20AC")
+        document.getElementById("offerta").innerHTML = "Sconto over 65 !"
 // :ALTRIMENTI
 //   °non applicare nessuno sconto        
     } else {
 
         prezzoFinale = prezzoBiglietto
         console.log ("Prezzo Non Scontato " + prezzoFinale + " \u20AC")
-
+        document.getElementById("offerta").innerHTML = "Nessuno sconto !"
     }
-    
+  
+
+ // second-container viene mostrato una volta cliccato il tasto "INVIA"   
+ let secondContainerEl = document.querySelector(".second-container");
+    secondContainerEl.style.display = "block";
+
+ document.getElementById("costo-biglietto").innerHTML = prezzoFinale.toFixed(2) + " \u20AC";
+ document.getElementById("carrozza").innerHTML = Math.round(Math.random()* 10); 
+ document.getElementById("nomePasseggero").innerHTML = userNameEl   
     
 })
 

@@ -8,16 +8,77 @@
     <title>Document</title>
 </head>
 <body>
+
+<main>
+
+        <div class="big-container">
+
+            <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+            <div class="first-container">
+                <div class="up-first-container">
+                    <div class="input-container">
+                        <h3>Nome Cognome</h3>
+                        <label for="userName"></label>
+                        <input id="userName" type="text">
+                    </div>
     
-<label for="tripKm"></label>
-<input id="tripKm" type="number" placeholder="Quanti Kilometri devi percorrere ?">
+                    <div class="input-container">
+                        <h3>Km da percorrere</h3>
+                        <label for="tripKm"></label>
+                        <input id="tripKm" type="number">
+                    </div>
+    
+                    <div class="input-container">
+                        <h3>Età passeggero</h3>
+                        <label for="userAge"></label>
+                        <input id="userAge" type="number">
+                    </div>
+                </div>
+                <div class="lower-first-container">
+                    <button id="myBtn">INVIO</button>
+                    <button id="myBtnError">ANNULLA</button>
+                </div>
+
+            </div>
+            
+            <h1>IL TUO BIGLIETTO</h1>
+                
+            <div class="second-container">
+                <h2>DETTAGLIO PASSEGGERI</h2>
+                <div class="inner-second-container">
+                    <div id="name-info" class="ticket-info">
+                      <h3>NOME PASSEGGERO </h3>
+                      <span id="nomePasseggero">...</span>  
+                    </div>
+                    <div class="ticket-info">
+                        <span>Offerta</span>
+                        <span id="offerta">...</span>   
+                    </div>
+                    <div class="ticket-info">
+                        <span>Carrozza</span>
+                        <span id="carrozza" >...</span>
+                    </div>
+                    <div class="ticket-info">
+                        <span>codice CP</span>
+                        <span>92911</span>
+                    </div>
+                    <div class="ticket-info">
+                        <span>Costo biglietto</span>
+                        <span id="costo-biglietto">...</span>
+                    </div>
+                </div>
+            </div>
+                
+                
+                
 
 
-<label for="userAge"></label>
-<input id="userAge" type="number" placeholder="Quanti anni hai ?">
 
 
-<button id="myBtn">INVIO</button>
+
+
+        </div>
+</main>
 
 
     <script type="text/javascript" src="js/script.js"></script>
