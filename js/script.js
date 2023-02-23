@@ -37,29 +37,41 @@ let userAgeEl;
 
 let myBtnEl = document.getElementById("myBtn");
 
-
+//-aggiungi evento sul bottone quando viene cliccato
 myBtnEl.addEventListener("click", function(){
+
+// -chiedi i kilometri che dovrà percorrere e memorizzali    
     tripKmEl = document.getElementById("tripKm").value;
     console.log(tripKmEl)
     
+// -calcola il prezzo del biglietto standard (0,21 * km)    
     let prezzoBiglietto = 0.21 * tripKmEl;
     console.log("Prezzo Standard " + prezzoBiglietto.toFixed(2) + " \u20AC");
 
+// -chiedi l'età dell'utente e memorizzala    
     userAgeEl = document.getElementById("userAge").value;
     console.log(userAgeEl);
 
     let prezzoFinale;
 
+
+//? SE è minorenne 
+//   °applica uno sconto del 20%    
     if(userAgeEl < 18){
 
         prezzoFinale = prezzoBiglietto - (20 * prezzoBiglietto / 100);
         console.log("Prezzo Scontato " + prezzoFinale.toFixed(2) + " \u20AC")
 
+
+// :?ALTRIMENTI SE è over 65
+//   °applica uno sconto del 40%        
     } else if (userAgeEl > 65){
 
         prezzoFinale = prezzoBiglietto - (40 * prezzoBiglietto / 100);
         console.log("Prerzzo Scontato " + prezzoFinale.toFixed(2) + " \u20AC")
 
+// :ALTRIMENTI
+//   °non applicare nessuno sconto        
     } else {
 
         prezzoFinale = prezzoBiglietto
