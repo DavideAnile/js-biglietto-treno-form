@@ -40,6 +40,7 @@ let userAgeEl;
 let myBtnEl = document.getElementById("myBtn");
 
 
+
 //-aggiungi evento sul bottone quando viene cliccato
 myBtnEl.addEventListener("click", function(){
 
@@ -88,6 +89,9 @@ myBtnEl.addEventListener("click", function(){
     }
   
 
+   
+
+
  // second-container viene mostrato una volta cliccato il tasto "INVIA"   
  let secondContainerEl = document.querySelector(".second-container");
     secondContainerEl.style.display = "block";
@@ -96,10 +100,16 @@ myBtnEl.addEventListener("click", function(){
  document.getElementById("carrozza").innerHTML = Math.round(Math.random()* 10); 
  document.getElementById("nomePasseggero").innerHTML = userNameEl   
     
-})
+});
 
 
 
+
+function clearText(){
+    document.getElementById("userName").value = "";
+    document.getElementById("userAge").value = "";
+    document.getElementById("tripKm").value = "";
+}
 
 
 

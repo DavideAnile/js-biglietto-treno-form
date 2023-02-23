@@ -15,7 +15,7 @@
 
             <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
             <div class="first-container">
-                <div class="up-first-container">
+                <div id="form" class="up-first-container">
                     <div class="input-container">
                         <h3>Nome Cognome</h3>
                         <label for="userName"></label>
@@ -31,12 +31,12 @@
                     <div class="input-container">
                         <h3>Età passeggero</h3>
                         <label for="userAge"></label>
-                        <input id="userAge" type="number">
+                        <input id="userAge" type="number" min="1" max="100">
                     </div>
                 </div>
                 <div class="lower-first-container">
                     <button id="myBtn">INVIO</button>
-                    <button id="myBtnError">ANNULLA</button>
+                    <button id="myBtnError" onclick="clearText()">ANNULLA</button>
                 </div>
 
             </div>
